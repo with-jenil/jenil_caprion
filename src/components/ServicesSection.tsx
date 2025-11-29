@@ -57,7 +57,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     >
       <div className="glass-card rounded-2xl p-8 h-full hover-lift cursor-pointer">
         {/* Icon Container */}
-        <div className="w-14 h-14 rounded-xl bg-gradient-neon flex items-center justify-center mb-6 group-hover:animate-glow-pulse transition-all duration-500">
+        <div className="w-14 h-14 rounded-xl bg-gradient-accent flex items-center justify-center mb-6 group-hover:animate-glow-pulse transition-all duration-500">
           <service.icon className="w-7 h-7 text-primary-foreground" />
         </div>
 
@@ -98,7 +98,7 @@ export default function ServicesSection() {
             Our Services
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            What We <span className="text-gradient bg-gradient-neon">Build</span>
+            What We <span className="text-gradient bg-gradient-accent">Build</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             End-to-end digital solutions designed to transform your business and accelerate growth.

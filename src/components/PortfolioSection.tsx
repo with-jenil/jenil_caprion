@@ -10,21 +10,21 @@ const projects = [
     category: "SaaS Platform",
     description: "Real-time financial analytics dashboard with AI-powered insights and automated reporting.",
     tags: ["React", "Node.js", "PostgreSQL", "AI/ML"],
-    gradient: "from-cyan-500/20 to-blue-600/20",
+    gradient: "from-emerald-500/20 to-teal-600/20",
   },
   {
     title: "E-Commerce Engine",
     category: "Web Application",
     description: "Scalable e-commerce platform with custom checkout flows and inventory management.",
     tags: ["Next.js", "Stripe", "MongoDB", "AWS"],
-    gradient: "from-purple-500/20 to-pink-600/20",
+    gradient: "from-teal-500/20 to-cyan-600/20",
   },
   {
     title: "Healthcare Portal",
     category: "Enterprise Solution",
     description: "HIPAA-compliant patient management system with telehealth integration.",
     tags: ["TypeScript", "GraphQL", "Docker", "Azure"],
-    gradient: "from-emerald-500/20 to-teal-600/20",
+    gradient: "from-green-500/20 to-emerald-600/20",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function PortfolioSection() {
             Our Work
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Featured <span className="text-gradient bg-gradient-neon">Projects</span>
+            Featured <span className="text-gradient bg-gradient-accent">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A glimpse into some of the transformative solutions we've built for our clients.

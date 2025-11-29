@@ -6,6 +6,48 @@
 
 @layer base {
   :root {
+    /* Light theme - Evolut inspired */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens - Light */
+    --accent-green: 142 71% 45%;
+    --accent-green-glow: 142 76% 55%;
+    --surface: 0 0% 98%;
+    --gradient-accent: linear-gradient(135deg, hsl(142 71% 45%), hsl(160 84% 39%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --shadow-accent: 0 0 30px hsl(142 71% 45% / 0.3);
+    --shadow-accent-strong: 0 0 60px hsl(142 71% 45% / 0.5);
+  }
+
+  .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 98%;
 
@@ -15,7 +57,7 @@
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 190 100% 50%;
+    --primary: 142 71% 45%;
     --primary-foreground: 0 0% 4%;
 
     --secondary: 0 0% 12%;
@@ -24,7 +66,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 190 100% 50%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,23 +74,16 @@
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 190 100% 50%;
+    --ring: 142 71% 45%;
 
-    --radius: 0.75rem;
-
-    /* Custom design tokens */
-    --neon-blue: 190 100% 50%;
-    --neon-blue-glow: 190 100% 60%;
-    --dark-surface: 0 0% 8%;
-    --gradient-neon: linear-gradient(135deg, hsl(190 100% 50%), hsl(210 100% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 6%));
-    --shadow-neon: 0 0 30px hsl(190 100% 50% / 0.3);
-    --shadow-neon-strong: 0 0 60px hsl(190 100% 50% / 0.5);
-  }
-
-  .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Custom design tokens - Dark */
+    --accent-green: 142 71% 45%;
+    --accent-green-glow: 142 76% 55%;
+    --surface: 0 0% 8%;
+    --gradient-accent: linear-gradient(135deg, hsl(142 71% 45%), hsl(160 84% 39%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 6%));
+    --shadow-accent: 0 0 30px hsl(142 71% 45% / 0.3);
+    --shadow-accent-strong: 0 0 60px hsl(142 71% 45% / 0.5);
   }
 }
 
@@ -74,15 +109,15 @@
 @layer components {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-neon);
+    background-image: var(--gradient-accent);
   }
 
-  .neon-glow {
-    box-shadow: var(--shadow-neon);
+  .accent-glow {
+    box-shadow: var(--shadow-accent);
   }
 
-  .neon-glow-strong {
-    box-shadow: var(--shadow-neon-strong);
+  .accent-glow-strong {
+    box-shadow: var(--shadow-accent-strong);
   }
 
   .glass-card {
@@ -95,7 +130,7 @@
 
   .hover-lift:hover {
     @apply -translate-y-2;
-    box-shadow: var(--shadow-neon);
+    box-shadow: var(--shadow-accent);
   }
 }
 
@@ -144,10 +179,10 @@
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(190 100% 50% / 0.3);
+    box-shadow: 0 0 20px hsl(142 71% 45% / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(190 100% 50% / 0.6);
+    box-shadow: 0 0 40px hsl(142 71% 45% / 0.6);
   }
 }
 
@@ -178,14 +213,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0 0% 4%);
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 20%);
+  background: hsl(var(--muted));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(190 100% 50%);
+  background: hsl(var(--primary));
 }

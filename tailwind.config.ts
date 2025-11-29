@@ -47,10 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        neon: {
-          DEFAULT: "hsl(var(--neon-blue))",
-          glow: "hsl(var(--neon-blue-glow))",
+        "accent-green": {
+          DEFAULT: "hsl(var(--accent-green))",
+          glow: "hsl(var(--accent-green-glow))",
         },
+        surface: "hsl(var(--surface))",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -87,8 +88,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(190 100% 50% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(190 100% 50% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(142 71% 45% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(142 71% 45% / 0.6)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
@@ -107,8 +108,8 @@ export default {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-neon": "linear-gradient(135deg, hsl(190 100% 50%), hsl(210 100% 60%))",
-        "grid-pattern": "linear-gradient(to right, hsl(0 0% 15% / 0.3) 1px, transparent 1px), linear-gradient(to bottom, hsl(0 0% 15% / 0.3) 1px, transparent 1px)",
+        "gradient-accent": "linear-gradient(135deg, hsl(142 71% 45%), hsl(160 84% 39%))",
+        "grid-pattern": "linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px)",
       },
     },
   },

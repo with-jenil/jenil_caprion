@@ -94,7 +94,7 @@ export default function WhyUsSection() {
             Why Choose Us
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Why <span className="text-gradient bg-gradient-neon">CAPRION LABS</span>?
+            Why <span className="text-gradient bg-gradient-accent">CAPRION LABS</span>?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We combine technical excellence with strategic thinking to deliver solutions that drive real results.

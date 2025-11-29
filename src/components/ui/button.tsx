@@ -15,9 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-secondary hover:text-secondary-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        neon: "bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-[0_0_20px_hsl(190_100%_50%/0.4)] hover:shadow-[0_0_40px_hsl(190_100%_50%/0.6)] hover:scale-105",
-        "neon-outline": "border-2 border-primary text-primary bg-transparent hover:bg-primary/10 hover:shadow-[0_0_30px_hsl(190_100%_50%/0.3)]",
-        hero: "bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-base shadow-[0_0_30px_hsl(190_100%_50%/0.5)] hover:shadow-[0_0_50px_hsl(190_100%_50%/0.7)] hover:scale-105 active:scale-100",
+        neon: "bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold shadow-[0_0_20px_hsl(142_71%_45%/0.4)] hover:shadow-[0_0_40px_hsl(142_71%_45%/0.6)] hover:scale-105",
+        "neon-outline": "border-2 border-primary text-primary bg-transparent hover:bg-primary/10 hover:shadow-[0_0_30px_hsl(142_71%_45%/0.3)]",
+        hero: "bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-base shadow-[0_0_30px_hsl(142_71%_45%/0.5)] hover:shadow-[0_0_50px_hsl(142_71%_45%/0.7)] hover:scale-105 active:scale-100",
       },
       size: {
         default: "h-10 px-4 py-2",

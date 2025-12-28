@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { Send, Mail, MapPin, CheckCircle2 } from "lucide-react";
@@ -27,7 +28,7 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.description) {
@@ -52,22 +53,46 @@ export default function ContactSection() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const serviceId = "service_74whwsa";
+    const templateId = "template_xlnnpf7";
+    const publicKey = "54h0aS7ROl4Kn8r2B";
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.description,
+      to_email: "jjsathawara@gmail.com" // Depending on template configuration, this might not be needed client-side
+    };
 
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setIsSubmitting(false);
+          setIsSubmitted(true);
 
-    // Reset form after delay
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", description: "" });
-    }, 3000);
+          toast({
+            title: "Message Sent!",
+            description: "We'll get back to you within 24 hours.",
+          });
+
+          // Reset form after delay
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormData({ name: "", email: "", description: "" });
+          }, 3000);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          setIsSubmitting(false);
+          toast({
+            title: "Error Sending Message",
+            description: "Something went wrong. Please try again later.",
+            variant: "destructive",
+          });
+        }
+      );
   };
 
   return (

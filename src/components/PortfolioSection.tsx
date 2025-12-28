@@ -1,51 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, ArrowRight, ArrowUpRight, ChevronRight, ChevronLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, ChevronRight, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const projects = [
-  {
-    title: "My Sambandh",
-    category: "Matrimonial Platform",
-    description: "Premium matchmaking service with holistic grooming and relationship management features.",
-    tags: ["Next.js", "Node.js", "MongoDB", "AWS"],
-    image: "/images/mysambandh.jpg",
-    gradient: "from-rose-500/20 to-orange-600/20",
-  },
-  {
-    title: "FinTech Dashboard",
-    category: "SaaS Platform",
-    description: "Real-time financial analytics dashboard with AI-powered insights and automated reporting.",
-    tags: ["React", "Node.js", "PostgreSQL", "AI/ML"],
-    image: "/images/fintech-dashboard.png",
-    gradient: "from-emerald-500/20 to-teal-600/20",
-  },
-  {
-    title: "E-Commerce Engine",
-    category: "Web Application",
-    description: "Scalable e-commerce platform with custom checkout flows and inventory management.",
-    tags: ["Next.js", "Stripe", "MongoDB", "AWS"],
-    image: "/images/ecommerce-engine.png",
-    gradient: "from-teal-500/20 to-cyan-600/20",
-  },
-  {
-    title: "Healthcare Portal",
-    category: "Enterprise Solution",
-    description: "HIPAA-compliant patient management system with telehealth integration.",
-    tags: ["TypeScript", "GraphQL", "Docker", "Azure"],
-    // Using a placeholder gradient or a reliable unsplash image since generation failed
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070",
-    gradient: "from-green-500/20 to-emerald-600/20",
-  },
-  {
-    title: "AI Marketing Tool",
-    category: "SaaS Application",
-    description: "Automated social media marketing platform with content generation and scheduling.",
-    tags: ["Python", "FastAPI", "React", "OpenAI"],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1974",
-    gradient: "from-purple-500/20 to-pink-600/20",
-  },
-];
+import { projects } from "@/data/projects";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef(null);
@@ -57,52 +15,54 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       initial={{ opacity: 0, scale: 0.95 }}
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative min-w-[350px] md:min-w-[450px] h-[500px] snap-center select-none"
+      className="group relative min-w-[350px] md:min-w-[450px] h-[500px] snap-center select-none cursor-pointer"
     >
-      <div className="relative h-full rounded-3xl border border-border/50 bg-card/30 backdrop-blur-md overflow-hidden hover-lift flex flex-col">
-        {/* Full Image Background (Optional Style) or Top Image */}
-        <div className="relative h-[250px] overflow-hidden">
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-10`} />
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute top-4 right-4 z-20">
-            <div className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <ArrowUpRight className="w-5 h-5 text-white" />
+      <Link to={`/project/${project.slug}`} className="block h-full">
+        <div className="relative h-full rounded-3xl border border-border/50 bg-card/30 backdrop-blur-md overflow-hidden hover-lift flex flex-col">
+          {/* Full Image Background (Optional Style) or Top Image */}
+          <div className="relative h-[250px] overflow-hidden">
+            <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-10`} />
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute top-4 right-4 z-20">
+              <div className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowUpRight className="w-5 h-5 text-white" />
+              </div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="relative p-6 px-8 flex flex-col flex-grow">
+            <div className="mb-4">
+              <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                {project.category}
+              </span>
+              <h3 className="font-display text-2xl font-bold text-foreground mt-2 group-hover:text-primary transition-colors duration-300">
+                {project.title}
+              </h3>
+            </div>
+
+            <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
+              {project.description}
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground border border-border/50"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </div>
-
-        {/* Content */}
-        <div className="relative p-6 px-8 flex flex-col flex-grow">
-          <div className="mb-4">
-            <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-              {project.category}
-            </span>
-            <h3 className="font-display text-2xl font-bold text-foreground mt-2 group-hover:text-primary transition-colors duration-300">
-              {project.title}
-            </h3>
-          </div>
-
-          <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
-            {project.description}
-          </p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground border border-border/50"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }

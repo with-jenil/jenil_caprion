@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-grid-pattern bg-[size:60px_60px] opacity-20" />
-      
+
       {/* Animated Gradient Orbs */}
       <motion.div
         className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px]"
@@ -41,10 +41,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8"
+          // className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8"
           >
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">SaaS Development & AI Solutions</span>
+            {/* <Sparkles className="w-4 h-4 text-primary" /> */}
+            {/* <span className="text-sm text-muted-foreground">SaaS Development & AI Solutions</span> */}
           </motion.div>
 
           {/* Main Headline */}
@@ -102,13 +102,13 @@ export default function HeroSection() {
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border/50"
+            className="flex justify-center gap-12 mt-20 pt-10 border-t border-border/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.3 }}
           >
             {[
-              { value: "50+", label: "Projects Delivered" },
+              // { value: "50+", label: "Projects Delivered" },
               { value: "98%", label: "Client Satisfaction" },
               { value: "24/7", label: "Support Available" },
             ].map((stat, index) => (

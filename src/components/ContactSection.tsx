@@ -29,7 +29,7 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.description) {
       toast({
         title: "Error",
@@ -57,7 +57,7 @@ export default function ContactSection() {
 
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",
@@ -74,7 +74,7 @@ export default function ContactSection() {
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-secondary/20">
       {/* Background Elements */}
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -109,7 +109,7 @@ export default function ContactSection() {
                 Start Your Journey
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you're launching a new product, scaling an existing platform, or exploring AI automation, 
+                Whether you're launching a new product, scaling an existing platform, or exploring AI automation,
                 we're here to help turn your vision into a powerful digital solution.
               </p>
             </div>
@@ -121,8 +121,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email us at</p>
-                  <a 
-                    href="mailto:contact@caprionlabs.com" 
+                  <a
+                    href="mailto:contact@caprionlabs.com"
                     className="text-foreground font-medium hover:text-primary transition-colors"
                   >
                     contact@caprionlabs.com
@@ -136,7 +136,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Based in</p>
-                  <p className="text-foreground font-medium">Global • Remote-First</p>
+                  <p className="text-foreground font-medium">Ahmedabad, Gujarat</p>
                 </div>
               </div>
             </div>

@@ -1,43 +1,30 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { 
-  Code2, 
-  Bot, 
-  Palette, 
-  Layers, 
-  Database, 
-  Cloud 
-} from "lucide-react";
+
 
 const services = [
   {
-    icon: Code2,
     title: "Custom Web Application Development",
     description: "Scalable, high-performance web applications built with modern frameworks and best practices.",
   },
   {
-    icon: Bot,
     title: "AI Automation & Workflow Engineering",
     description: "Intelligent automation solutions that streamline operations and boost productivity.",
   },
   {
-    icon: Palette,
     title: "UX/UI Design & Branding",
     description: "Beautiful, intuitive interfaces that create memorable user experiences and strengthen brand identity.",
   },
   {
-    icon: Layers,
     title: "Custom Web Stack Solutions",
     description: "Tailored technology stacks optimized for your specific business requirements and growth plans.",
   },
   {
-    icon: Database,
     title: "Database Design & Architecture",
     description: "Robust, scalable database solutions designed for performance, security, and data integrity.",
   },
   {
-    icon: Cloud,
     title: "Deployment & DevOps Consulting",
     description: "CI/CD pipelines, cloud infrastructure, and DevOps practices for seamless deployments.",
   },
@@ -56,11 +43,6 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       className="group relative"
     >
       <div className="glass-card rounded-2xl p-8 h-full hover-lift cursor-pointer">
-        {/* Icon Container */}
-        <div className="w-14 h-14 rounded-xl bg-gradient-accent flex items-center justify-center mb-6 group-hover:animate-glow-pulse transition-all duration-500">
-          <service.icon className="w-7 h-7 text-primary-foreground" />
-        </div>
-
         {/* Content */}
         <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
           {service.title}
@@ -84,7 +66,7 @@ export default function ServicesSection() {
     <section id="services" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern bg-[size:60px_60px] opacity-10" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div

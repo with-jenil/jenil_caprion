@@ -57,7 +57,7 @@ export default function ClientsPartners() {
             </div>
 
             {/* Marquee Container */}
-            <div className="relative flex overflow-x-hidden group">
+            <div className="relative flex overflow-x-hidden group mb-12">
                 <div className="flex gap-12 md:gap-24 items-center whitespace-nowrap py-4 animate-marquee">
                     {/* Render list twice to ensure seamless loop */}
                     {[...partners, ...partners].map((partner, index) => (
@@ -80,6 +80,15 @@ export default function ClientsPartners() {
                 <div className="absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
             </div>
-        </section>
+
+            <div className="flex justify-center relative z-10">
+                <a
+                    href="/case-studies"
+                    className="inline-flex items-center justify-center rounded-full bg-primary/10 px-8 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+                >
+                    Explore More Case Study
+                </a>
+            </div>
+        </section >
     );
 }

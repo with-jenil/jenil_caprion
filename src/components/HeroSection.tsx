@@ -60,7 +60,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Build Smarter
+              Build Smarter-mauli
             </motion.span>
             <motion.span
               className="block text-gradient bg-gradient-accent"
